@@ -716,7 +716,10 @@ type_qualifier0 -> TypeQualifier =
     clang<K<"_Null_unspecified">> { TypeQualifier::NullUnspecified } /
     clang<K<"_Nullable">> { TypeQualifier::Nullable } /
     // 6.7.2.4: _Atomics followed by a "(" are interpreted as type specifiers.
-    K<"_Atomic"> _ !"(" { TypeQualifier::Atomic }
+    K<"_Atomic"> _ !"(" { TypeQualifier::Atomic } /
+    K<gnu<"__prog__">> { TypeQualifier::Custom } /
+    K<gnu<"__pack_upper_byte">> { TypeQualifier::Custom } /
+    K<gnu<"__eds__">> { TypeQualifier::Custom }
 
 ////
 // 6.7.4 Function specifiers

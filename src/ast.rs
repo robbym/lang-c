@@ -763,6 +763,8 @@ pub enum TypeQualifier {
     Nullable,
     /// `_Atomic`
     Atomic,
+    
+    Custom,
 }
 
 // From 6.7.4
